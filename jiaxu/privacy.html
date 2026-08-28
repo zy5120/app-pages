@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="color-scheme" content="light dark">
+  <title>小鱼家序 - 隐私政策</title>
+  <style>
+    :root{font-family:-apple-system,BlinkMacSystemFont,"SF Pro Text","PingFang SC",sans-serif;color:#1b2420;background:#f6f8f7}
+    *{box-sizing:border-box}body{margin:0;padding:env(safe-area-inset-top) 20px env(safe-area-inset-bottom);line-height:1.75}
+    main{max-width:760px;margin:44px auto 72px;background:#fff;border-radius:26px;padding:38px;box-shadow:0 16px 50px rgba(24,70,52,.07)}
+    h1{font-size:30px;line-height:1.25;margin:0 0 8px}h2{font-size:20px;margin:34px 0 10px}p,li{color:#4e5b55}ul{padding-left:22px}
+    .meta{font-size:14px;color:#7b8781}.notice{background:#edf5f1;border-radius:16px;padding:16px 18px;margin:24px 0}a{color:#216b50;font-weight:600}
+    @media(max-width:580px){main{margin:18px auto;padding:24px;border-radius:20px}h1{font-size:26px}}
+    @media(prefers-color-scheme:dark){:root{color:#edf4f0;background:#0d1210}main{background:#171d1a}p,li{color:#b1bdb7}.notice{background:#203029}a{color:#7ed5ae}}
+  </style>
+</head>
+<body><main>
+  <h1>小鱼家序隐私政策</h1>
+  <p class="meta">生效及最后更新日期：2026 年 8 月 29 日</p>
+  <div class="notice">小鱼家序没有广告、用户跟踪或第三方分析 SDK，不连接银行账户，也不把家庭账目发送到开发者自建服务器。</div>
+
+  <h2>1. 本政策适用范围</h2>
+  <p>本政策说明“小鱼家序”iOS 与 iPadOS App 如何处理您主动录入的家庭资料、收入、计划账本、流水、凭证与家庭共享信息。</p>
+
+  <h2>2. App 处理的数据</h2>
+  <ul>
+    <li><strong>家庭与成员资料：</strong>家庭名称、成员昵称、预计月收入及发薪日。</li>
+    <li><strong>财务与记账内容：</strong>收入、支出、债务、存款、心愿、预算、分类、备注、周期任务与家庭表决记录。</li>
+    <li><strong>凭证图片：</strong>您主动选择的存款或还款截图。原图仅在设备上进行形式核验，核验后不保存；App 最多保留一张低分辨率缩略图用于家庭记录。</li>
+    <li><strong>iCloud 身份关联：</strong>CloudKit 提供的容器内用户标识，用于把当前 iCloud 用户关联到家庭成员。App 不读取或显示您的 Apple 账户邮箱与密码。</li>
+  </ul>
+
+  <h2>3. 数据存储与同步</h2>
+  <p>数据首先保存在设备上的 App 沙盒中。启用家庭同步后，数据通过 Apple CloudKit 存入您的 iCloud，并可通过 Apple 的 CKShare 机制共享给您明确邀请并由其接受邀请的家庭成员。CloudKit 的基础设施和账户数据由 Apple 按其隐私政策处理。</p>
+  <p>小鱼家序不运营独立的开发者业务服务器，不出售家庭数据，也不会把数据用于广告、营销、用户画像或跨 App 跟踪。</p>
+
+  <h2>4. 凭证核验</h2>
+  <p>当前版本使用 Apple Vision 框架在设备上识别凭证文字，仅进行“是否发生约定存款或还款”的形式性判断。原始图片不会写入本地账本或 CloudKit；仅低容量缩略图可能随家庭账本同步。小鱼家序不会把凭证发送给第三方 AI 服务。</p>
+
+  <h2>5. 通知</h2>
+  <p>若您主动允许通知，App 会在设备上安排发薪确认、凭证、家庭表决和周期截止提醒。通知不用于营销。</p>
+
+  <h2>6. 数据访问、共享与删除</h2>
+  <ul>
+    <li>您可以在 App 内查看并编辑自己的家庭账本内容。</li>
+    <li>家庭共享数据仅向该 CloudKit 家庭中已接受邀请的成员开放。</li>
+    <li>家庭所有者可以依照 App 内规则销毁整个家庭账本；其他成员可以经家庭一致同意后退出共享家庭。</li>
+    <li>删除 App 会清除当前设备的本地副本；已同步到 iCloud 或仍由其他家庭成员共同使用的数据，需要通过 App 内的家庭退出或销毁流程处理。</li>
+  </ul>
+
+  <h2>7. 安全与数据最小化</h2>
+  <p>App 使用 iOS 沙盒、文件保护、CloudKit 权限和 Apple 系统提供的传输安全能力。小鱼家序只处理完成家庭记账、同步和自我约束规则所需的数据。</p>
+
+  <h2>8. 儿童隐私</h2>
+  <p>小鱼家序不是面向儿童设计的服务，也不会故意收集儿童个人信息。家庭成员资料应由具备相应监护权或授权的成年人管理。</p>
+
+  <h2>9. 政策更新</h2>
+  <p>若数据处理方式发生实质变化，我们会更新本页面及其“最后更新日期”，并按需要在 App 或 App Store Connect 中提供提示。</p>
+
+  <h2>10. 联系我们</h2>
+  <p>隐私问题或数据处理咨询：<a href="mailto:Yuu5120@vip.qq.com">Yuu5120@vip.qq.com</a></p>
+  <p><a href="index.html">返回小鱼家序</a> · <a href="support.html">技术支持</a></p>
+</main></body>
+</html>

@@ -18,10 +18,10 @@ li{margin:4px 0}
 <p>最后更新：2026年11月26日</p>
 
 <h2>数据收集与本地存储</h2>
-<p>小鱼六壬无需注册账号，不要求您提供姓名、邮箱或手机号。起课历史记录及备注默认保存在您的设备上，不会上传至开发者自建服务器。您主动使用 AI 时，相关内容会按下文说明发送给 AI 服务商。</p>
+<p>小鱼六壬无需注册账号，不要求您提供姓名、邮箱或手机号。起课历史记录及备注默认保存在您的设备上，开启内容同步后会同步到您的私人 iCloud。发起在线解读时，仅发送下文所列的本次解读内容。</p>
 <ul>
   <li>本地数据包括历史记录、AI 解读和追问记录、个人 AI 配置，以及每日免费额度的日期与使用次数、已购解读余额及用于防止重复入账的交易标识。</li>
-  <li>免费内置 AI 每天 1 次，本机按北京时间每天 0 点重置。解读、追问或重新生成返回内容即计 1 次；失败且没有内容不扣次数。每日免费额度由设备记录。在支持 iCloud 同步的版本中，购买次数包的余额、交易标识和扣次记录保存在用户的私人 iCloud 数据库，用于核对余额和防止重复入账。此账本不包含问题、课式、牌阵、解读或个人密钥。</li>
+  <li>免费内置 AI 每天 1 次，按北京时间每天 0 点重置。解读、追问或重新生成返回内容即计 1 次；失败且没有内容不扣次数。使用中转的版本也在服务端核对每日用量。在支持 iCloud 同步的版本中，购买次数包的余额、交易标识和扣次记录保存在用户的私人 iCloud 数据库，用于核对余额和防止重复入账。此账本不包含问题、课式、牌阵、解读或个人密钥。</li>
 </ul>
 
 <h3>会员如何同步个人内容？</h3>
@@ -30,11 +30,17 @@ li{margin:4px 0}
 <h2>网络使用与 AI 服务</h2>
 <p>核心功能可离线使用。您主动请求 AI 解读、追问或重新生成时，应用会发送当前卦象、课式与起课方式等上下文、您填写的问题；追问还会发送此前的 AI 回复及问答上下文，以便延续对话。</p>
 <ul>
-  <li><strong>内置 AI</strong>：使用 DeepSeek 服务，无需您自行提供 API Key；请求由设备直接发送至 DeepSeek。</li>
+  <li><strong>内置 AI</strong>：从构建 149 起，内置解读经开发者运营的 api.yubo.net 核对额度，并将本次问题及所需上下文转给 DeepSeek。较早构建由设备直接连接 DeepSeek。</li>
   <li><strong>自备 AI</strong>：使用您配置的服务商和服务地址。个人 API Key 保存在本机，仅用于向您配置的服务地址进行认证，不发送给开发者自建服务器。</li>
-  <li>AI 请求由客户端直接发送给相应服务商，不经过开发者的 AI 代理。服务商如何处理、保存和删除收到的数据，请以该服务商的隐私政策为准。</li>
+  <li>自备服务始终由设备直连。服务商如何处理、保存和删除收到的数据，请以该服务商的隐私政策为准。</li>
   <li>App Store 商品查询、购买、恢复购买和权益更新也可能使用网络，不取决于是否配置个人 AI 密钥。</li>
 </ul>
+
+<h2>内置服务保存哪些记录？</h2>
+<p>发起内置解读时，中转服务在内存中处理本次问题、所选课式或牌阵、相关对话及生成的回复。中转应用的数据库和日志都不保存这些正文，也不保存 Apple 签名凭证原文。模型目录查询不携带问题。中转服务不读取私人 iCloud 历史。DeepSeek 收到解读材料后的处理规则见下文。该服务可能在中国大陆处理数据，数据可能跨境传输。</p>
+<p>为核对额度、恢复权益、防止冒用和重复扣次，服务端长期保留本 App 的设备验证标识、公钥、验证计数及注册摘要，Apple 的 App 交易和购买交易标识、化名关联标识，以及商品、权益有效期、余额和扣次记录。记录包括北京时间的使用日期，以及请求编号、处理状态和相关时间。服务可向 Apple 核验购买及退款。上述账本目前没有自动清除期限。</p>
+<p>一次性设备验证挑战在两分钟后失效。为限制滥用，中转应用按 App 和日期保存来源 IP 的散列值、请求计数和到期时间，并在后续请求中清理过期记录。连接及主机安全设施在提供服务时也可能处理 IP 和连接日志。</p>
+<p>如需查询、更正或申请删除相关记录，请通过本页邮箱联系，并提供 App 名称、发生时间或 Apple 订单信息，以便核对身份。请勿发送 Apple 密码、付款卡资料或个人服务密钥。卸载 App 不会自动删除这些记录。退款核对、防重复入账或依法需要的记录可能仍需保留。</p>
 
 <h2>服务商的数据处理</h2>
 <p>DeepSeek 的<a href="https://cdn.deepseek.com/policies/zh-CN/deepseek-open-platform-privacy-policy.html">开放平台隐私政策</a>自 2026 年 11 月 11 日生效。根据该政策，输入和输出可能保留并用于模型训练、评估与改进；服务商还处理 API 用量、请求及安全诊断日志，并可按 IP 推断大致位置用于安全。保存期限取决于处理目的和法律要求，本应用不承诺固定删除天数。</p>
@@ -45,12 +51,12 @@ li{margin:4px 0}
 <p>撤回会阻止后续未获许可的 AI、模型列表及余额请求，但不表示已删除服务商此前收到的内容。如需申请访问或删除这类数据，请通过下方已公布的联系渠道提出请求；使用自备 AI 时，也可按服务商政策联系其处理。</p>
 
 <h2>Apple 购买与权益</h2>
-<p>支付由 Apple 处理。应用通过 StoreKit 2 读取并验证 Apple 提供的交易及当前权益信息，包括商品标识、有效期和撤销状态，用于解锁功能、恢复购买，并在订阅到期、退款或撤销后更新相应权益。购买验证不经过开发者自建后端。</p>
-<p>有效月度订阅提供不限次内置解读，并允许接入自备服务。股东会员一次性永久解锁自备服务。可重复购买的消耗型次数包每包增加 10 次内置解读。当日免费次数优先，订阅有效时保留已购余额。已购次数在本 App 内长期有效。支持 iCloud 同步的版本可在使用同一 iCloud 账户和同一 App Store 购买账户的设备间同步余额。旧版仅在原设备保存余额。具体价格与管理方式见支持页面。</p>
+<p>支付由 Apple 处理。应用通过 StoreKit 2 读取并验证 Apple 提供的交易及当前权益信息，包括商品标识、有效期和撤销状态，用于解锁功能、恢复购买，并在订阅到期、退款或撤销后更新相应权益。使用中转的版本还会按下述方式核验内置服务的权益和额度。Apple 处理付款，开发者不接收付款卡资料。</p>
+<p>有效月度订阅提供不限次内置解读，并允许接入自备服务。股东会员一次性永久解锁自备服务。可重复购买的消耗型次数包每包增加 10 次内置解读。在使用中转服务的版本中，有效订阅不限次。股东会员每天享一次免费内置解读，用完可切换至自备服务。两类会员均保留已购次数。免费版先用每日免费次数，用完才可使用已购次数。会员状态无法核实时暂停扣次。已购次数在本 App 内长期有效。支持 iCloud 同步的版本可在使用同一 iCloud 账户和同一 App Store 购买账户的设备间同步余额。旧版仅在原设备保存余额。具体价格与管理方式见支持页面。</p>
 <p>Apple 按其<a href="https://www.apple.com/legal/privacy/">隐私政策</a>处理 App Store 与支付服务的信息。</p>
 
 <h2>第三方服务</h2>
-<p>本应用不使用第三方分析、广告或跟踪组件。使用的第三方服务包括上述内置或自备 AI 服务，以及 Apple 的 App Store、StoreKit 以及在支持同步的版本中使用的 iCloud 服务。</p>
+<p>本应用不使用第三方分析、广告或跟踪组件。使用的第三方服务包括上述内置解读所用的 DeepSeek 或您选择的自备服务，以及 Apple 的 App Attest、App Store、StoreKit 以及在支持同步的版本中使用的 iCloud 服务。</p>
 
 <h2>数据安全与删除</h2>
 <p>本机记录、配置及额度数据受 iOS 系统沙盒保护。您可在应用内删除历史记录；删除应用会移除历史记录等应用内数据，但不会自动取消 Apple 订阅，也不会删除 Apple 持有的购买记录或 AI 服务商已收到的内容。有效订阅和股东会员可通过原 Apple 账户恢复。使用支持 iCloud 同步的版本时，卸载 App 不会自动删除已同步的余额；第三方数据的处理与删除适用相应服务商的规则。</p>
@@ -65,10 +71,10 @@ li{margin:4px 0}
 <h1>Fish Liu Ren Privacy Policy</h1>
 <p>Last updated: November 26, 2026</p>
 <h2>Data and Local Storage</h2>
-<p>Fish Liu Ren requires no app account and does not ask for your name, email address, or phone number. Casting history and notes are saved on your device by default and are not uploaded to a developer-operated server. When you choose to use AI, relevant content is sent to the AI provider as described below.</p>
+<p>Fish Liu Ren requires no app account and does not ask for your name, email address, or phone number. Casting history and notes are saved on your device by default unless you enable private iCloud sync. When you request an online reading, the relevant material for that request is sent as described below.</p>
 <ul>
   <li>Local data includes reading history, AI responses and follow-up conversations, personal AI settings, the date and count for the daily free allowance, the purchased credit balance, and transaction identifiers used to prevent duplicate credit delivery.</li>
-  <li>Built-in AI includes 1 free request per day, reset on-device at midnight Beijing time. A reading, follow-up, or regeneration counts once when it returns content; a failure with no content does not count. The device tracks the daily free allowance. In versions with iCloud sync, the purchased balance, transaction identifiers and credit usage records are stored in your private iCloud database to reconcile credits and prevent duplicate delivery. The credit ledger contains no questions, spreads, casting results, readings or personal API keys.</li>
+  <li>Built-in AI includes 1 free request per day, reset at midnight Beijing time. A reading, follow-up, or regeneration counts once when it returns content; a failure with no content does not count. Builds using the relay also check daily usage on the developer’s service. In versions with iCloud sync, the purchased balance, transaction identifiers and credit usage records are stored in your private iCloud database to reconcile credits and prevent duplicate delivery. The credit ledger contains no questions, spreads, casting results, readings or personal API keys.</li>
 </ul>
 
 <h3>Can I sync my reading history and drafts?</h3>
@@ -77,11 +83,17 @@ li{margin:4px 0}
 <h2>Network Use and AI Providers</h2>
 <p>Core features work offline. When you request an AI reading, follow-up, or regeneration, the app sends the current divination result, chart, and casting-method context and your question. Follow-ups also include previous AI responses and question-and-answer context to continue the conversation.</p>
 <ul>
-  <li><strong>Built-in AI</strong> uses DeepSeek. You do not need to supply a personal API key; requests go directly from your device to DeepSeek.</li>
+  <li><strong>Built-in readings.</strong> From build 149, built-in readings go through the developer’s service at api.yubo.net. It checks access and forwards your question and the context needed for this reading to DeepSeek. Earlier builds connect directly to DeepSeek.</li>
   <li><strong>Own-key AI</strong> uses the provider and service address you configure. Your personal API key is stored on-device and used only to authenticate with that configured service address, not sent to a developer-operated server.</li>
-  <li>AI requests go directly from the client to the relevant provider, without a developer-operated AI proxy. Refer to that provider's privacy policy for how it handles, retains, and deletes received data.</li>
+  <li>Own-key requests go directly to the address you choose. Refer to that provider's privacy policy for how it handles, retains, and deletes received data.</li>
   <li>App Store product lookup, purchases, restoration, and entitlement updates may also use the network, whether or not you configure a personal AI key.</li>
 </ul>
+
+<h2>What does the built-in service keep?</h2>
+<p>The relay processes your question, the selected chart or spread, relevant conversation and generated reply in memory. Its application database and logs do not store these texts or the original signed Apple proofs. Model-list requests contain no question. The relay does not read your private iCloud history. DeepSeek may process data in mainland China, which can involve an international transfer. Its handling of the material it receives is covered below.</p>
+<p>To verify access, reconcile credits and prevent fraud or duplicate charges, the service retains the app’s device-attestation identifier, public key, verification counter and registration digest. It also keeps Apple app and purchase transaction identifiers, pseudonymous account or device references, products, entitlement dates, balances and credit usage, including the Beijing-calendar usage date, request identifier, status and relevant times. It may check purchases and refunds with Apple. These records have no automatic deletion period at present.</p>
+<p>A one-time device verification challenge expires after two minutes. For rate limiting, the relay stores a source IP hash scoped to the app and day, together with an expiring request count. Later requests clean up expired entries. Network and hosting security services may also process IP addresses and connection logs.</p>
+<p>To ask for access, correction or deletion, email the address on this page. Identify the app and approximate time or Apple order so we can verify the request. Do not send your Apple password, card details or personal provider key. Removing the app does not erase these records. Some records may be required for refunds, duplicate-credit prevention or legal obligations.</p>
 
 <h2>Provider Data Handling</h2>
 <p>DeepSeek's <a href="https://cdn.deepseek.com/policies/zh-CN/deepseek-open-platform-privacy-policy.html">Open Platform Privacy Policy</a>, effective November 11, 2026, permits retaining inputs and outputs and using them for model training, evaluation, and improvement. It also covers API usage, request and security logs, and approximate location inferred from IP for security. Retention depends on purpose and legal requirements; this app does not promise a fixed deletion period.</p>
@@ -92,12 +104,12 @@ li{margin:4px 0}
 <p>Withdrawal prevents future AI, model-list, and balance requests without permission. It does not delete content a provider has already received. To request access or deletion, use the published contact details below; for own-key AI, you may also follow your provider's request process.</p>
 
 <h2>Apple Purchases and Access</h2>
-<p>Apple processes payments. The app uses StoreKit 2 to read and verify transactions and current entitlements supplied by Apple, including product identifiers, expiration dates, and revocation status. This information unlocks features, restores purchases, and updates access after expiration, refunds, or revocation. There is no developer-operated purchase verification backend.</p>
-<p>An active monthly subscription includes unlimited built-in readings and access to your own provider. A one-time Lifetime Patron purchase permanently unlocks your own provider. Each consumable pack adds 10 built-in readings. Daily free access is used first, and active subscriptions preserve the credit balance. Credits do not expire and belong to this app. Versions with iCloud sync share the balance across devices using the same iCloud account and App Store purchase account. Earlier versions keep the balance on the original device. See the support page for purchase options.</p>
+<p>Apple processes payments. The app uses StoreKit 2 to read and verify transactions and current entitlements supplied by Apple, including product identifiers, expiration dates, and revocation status. This information unlocks features, restores purchases, and updates access after expiration, refunds, or revocation. Builds using the relay also verify access and usage as described below. Apple handles billing and does not share your payment card details with the developer.</p>
+<p>An active monthly subscription includes unlimited built-in readings and access to your own provider. A one-time Lifetime Patron purchase permanently unlocks your own provider. Each consumable pack adds 10 built-in readings. In builds that use the relay, active subscribers have unlimited built-in readings. Lifetime Patrons get one free built-in reading per day and can then switch to their own provider. Both keep all purchased credits. A free user can spend credits after using the daily free reading. Credits are held while membership status is uncertain. Credits do not expire and belong to this app. Versions with iCloud sync share the balance across devices using the same iCloud account and App Store purchase account. Earlier versions keep the balance on the original device. See the support page for purchase options.</p>
 <p>Apple handles App Store and payment information under its <a href="https://www.apple.com/legal/privacy/">Privacy Policy</a>.</p>
 
 <h2>Third-Party Services</h2>
-<p>The app contains no third-party analytics, advertising, or tracking components. Third-party services include the built-in or own-key AI providers described above and Apple’s App Store and StoreKit services, plus iCloud in versions that support balance syncing.</p>
+<p>The app contains no third-party analytics, advertising, or tracking components. Third-party services include the built-in or own-key AI providers described above and Apple’s App Attest, App Store and StoreKit services, plus iCloud in versions that support balance syncing.</p>
 
 <h2>Security and Deletion</h2>
 <p>Local records, settings, and allowance data are protected by the iOS app sandbox. You can delete reading history in the app. Deleting the app removes data such as local reading history, but does not automatically cancel an Apple subscription or delete Apple's purchase records or content already received by an AI provider. Active subscriptions and Lifetime Patron access can be restored through the original Apple account. Removing the app does not automatically delete balances already synced to your private iCloud database. Third-party data handling and deletion are governed by the relevant provider's policies.</p>
